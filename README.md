@@ -1,19 +1,21 @@
+
 # slimtomato
+
 ## A slim website automation system for node.js
 
 <a href="https://standardjs.com" style="float: right; padding: 0 0 20px 20px;"><img src="https://cdn.rawgit.com/feross/standard/master/sticker.svg" alt="Standard JavaScript" width="100" align="right"></a>
 
 * [Introduction](#introduction)
 * [Core concept](#core-concept)
-    * [Tomatoes and steps](#tomatoes-and-steps)
-    * [Results and options](#results-and-options)
+  * [Tomatoes and steps](#tomatoes-and-steps)
+  * [Results and options](#results-and-options)
 * [Tomato class](#tomato-class)
 * [Step types](#step-types)
-    * [Request](#request)
-    * [Callback](#callback)
-    * [Assertion](#assertion)
-    * [LinkClicker](#linkclicker)
-    * [FormFiller](#formfiller)
+  * [Request](#request)
+  * [Callback](#callback)
+  * [Assertion](#assertion)
+  * [LinkClicker](#linkclicker)
+  * [FormFiller](#formfiller)
 * [Creating a custom step type](#creating-a-custom-step-type)
 * [License](#license)
 
@@ -147,7 +149,7 @@ A tomato is instantiated like this: `new Tomato(options)`.
 * `jar`: A `request` cookie jar. If not specified, a new one is created automatically (and can be read using `tomato.jar` later).
 * `beforeStep`: A function with parameter `step` which is called before a step is executed. `step` is at the moment just an object `{name}`.
 * `afterStep`: A function with parameter `step` which is called after a step was executed. `step` is at the moment just an object `{name, result}`.
-* `beforeRequest`: A function with parameters `(step, request)` which is called before the `Request` step type initiates an HTTP request. `step` is at the moment just an object `{name}` and `request` is the [options object passed to request-promise](https://www.npmjs.com/package/request-promise#cheat-sheet)
+* `beforeRequest`: A function with parameters `(step, request)` which is called before the `Request` step type initiates an HTTP request. `step` is at the moment just an object `{name}` and `request` is the [options object passed to request-promise](https://www.npmjs.com/package/request-promise#cheat-sheet).
 
 Additionally, you can add arbitrary fields into the options object, which will become properties of the created tomato.
 
@@ -207,7 +209,7 @@ The `Assertion` step type is a convenience wrapper around `Callback` which verif
 
 * **Input:** Passed to the callback.
 * **Options:**
-  * `callback`: A function (can be `async`) which receives the previous step's `result` as parameter and is expected to return a truthy or falsy value to indicate success or failure. If a falsy version is returned, an exception will be thrown.
+  * `callback`: A function (can be `async`) which receives the previous step's `result` as parameter and is expected to return a truthy or falsy value to indicate success or failure. If a falsy value is returned, an exception will be thrown.
   * `explanator`: Optional function (can *not* by `async`!) which is invoked in case the callback failed. It also receives `result` as parameter and should return a string which describes why the assertion failed.
 * **Output:** Input passed through.
 
