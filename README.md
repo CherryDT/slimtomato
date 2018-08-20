@@ -302,4 +302,4 @@ Of course, you can also extend a preexisting step type (but then don't forget to
 
 ## License
 
-[MIT](https://oss.ninja/mit?organization=David%20Trapp)
+[MIT](https://oss.ninja/mit/CherryDT)
