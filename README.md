@@ -232,7 +232,7 @@ Note: At the moment, `<base>` tags are not handled.
 * **Options:**
   * `selector`: CSS selector of the link to be "clicked".
   * `autoRequest`: If set to `true`, the request is executed immediately (a `Request` step is generated to do so). Otherwise, only the request options are prepared.
-* **Output.**
+* **Output:**
   * If `autoRequest` is enabled, the output will be the output of the generated `Request` step that simulated "clicking" the link.
   * If `autoRequest` is disabled, the output will be the request options object ready to be passed into a `Request`.
 
