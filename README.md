@@ -11,7 +11,7 @@ Let's start with an example to see what the tomato can do:
 /* This example attempts to log into the CTEC backend and extract the user's full name */
 
 // Require the tomato
-const {Tomato, Request, FormFiller, Assertion, Callback} = require('slimtomato');
+const {Tomato, Request, FormFiller, Assertion, Callback} = require('slimtomato')
 
 // Credentials to log in with (of course, these won't work)
 const username = '1234'
