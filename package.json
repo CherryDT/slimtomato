@@ -6,11 +6,23 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "David Trapp",
+  "author": {
+    "name": "David Trapp",
+    "email": "cherry@cherrytree.at"
+  },
   "license": "MIT",
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
     "request": "^2.81.0",
     "request-promise-native": "^1.0.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CherryDT/slimtomato.git"
+  },
+  "keywords": ["crawler", "automation", "request", "form"],
+  "bugs": {
+    "url": "https://github.com/CherryDT/slimtomato/issues"
+  },
+  "homepage": "https://github.com/CherryDT/slimtomato"
 }
