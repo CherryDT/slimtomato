@@ -3,6 +3,22 @@
 
 <a href="https://standardjs.com" style="float: right; padding: 0 0 20px 20px;"><img src="https://cdn.rawgit.com/feross/standard/master/sticker.svg" alt="Standard JavaScript" width="100" align="right"></a>
 
+* [Introduction](#introduction)
+* [Core concept](#core-concept)
+    * [Tomatoes and steps](#tomatoes-and-steps)
+    * [Results and options](#results-and-options)
+* [Tomato class](#tomato-class)
+* [Step types](#step-types)
+    * [Request](#request)
+    * [Callback](#callback)
+    * [Assertion](#assertion)
+    * [LinkClicker](#linkclicker)
+    * [FormFiller](#formfiller)
+* [Creating a custom step type](#creating-a-custom-step-type)
+* [License](#license)
+
+## Introduction
+
 The goal of the "slim tomato" - whose name comes from "au[tomato]r", by the way - is to fill the need of a very basic and slim library to automate interaction with simple websites. It provides a simple and fast way to simulate user interaction at "HTTP level" - sending a request and then following up with "clicking" links, filling forms, and so on.
 
 Let's start with an example to see what the tomato can do:
