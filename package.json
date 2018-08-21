@@ -1,6 +1,6 @@
 {
   "name": "slimtomato",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A slim website automation system",
   "main": "index.js",
   "scripts": {
