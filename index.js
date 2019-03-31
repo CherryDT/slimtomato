@@ -34,7 +34,7 @@ class Step {
 
 class Request extends Step {
   run (tomato, prev) {
-    if (tomato.beforeRequest) tomato.beforeRequest(tomato, this.options)
+    if (tomato.beforeRequest) tomato.beforeRequest(this, this.options)
     return rp(Object.assign({
       jar: tomato.jar,
       followAllRedirects: true
