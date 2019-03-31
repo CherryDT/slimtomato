@@ -1,6 +1,6 @@
 {
   "name": "slimtomato",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A slim website automation system",
   "main": "index.js",
   "scripts": {
@@ -20,7 +20,12 @@
     "type": "git",
     "url": "https://github.com/CherryDT/slimtomato.git"
   },
-  "keywords": ["crawler", "automation", "request", "form"],
+  "keywords": [
+    "crawler",
+    "automation",
+    "request",
+    "form"
+  ],
   "bugs": {
     "url": "https://github.com/CherryDT/slimtomato/issues"
   },
