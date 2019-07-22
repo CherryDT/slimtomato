@@ -35,11 +35,12 @@ const {Tomato, Request, FormFiller, Assertion, Callback} = require('slimtomato')
 const username = '1234'
 const password = 'ABC123'
 
-// Create a tomato, with some lifecycle hooks for debug output
+// Create a tomato, with some lifecycle hooks for debug output and some default headers
 const tomato = new Tomato({
   beforeStep: step => console.log(`Executing step: ${step.name}`),
   afterStep: step => console.log(`Step done: ${step.name}`),
-  beforeRequest: (step, request) => console.log(`Step "${step.name}" is sending request:`, request)
+  beforeRequest: (step, request) => console.log(`Step "${step.name}" is sending request:`, request),
+  requestOptions: {headers: {Accept: '*/*', 'User-Agent': 'slimtomato/1'}}
 })
 
 // Execute our automation pipeline
@@ -150,6 +151,7 @@ A tomato is instantiated like this: `new Tomato(options)`.
 * `beforeStep`: A function with parameter `step` which is called before a step is executed. `step` is at the moment just an object `{name}`.
 * `afterStep`: A function with parameter `step` which is called after a step was executed. `step` is at the moment just an object `{name, result}`.
 * `beforeRequest`: A function with parameters `(step, request)` which is called before the `Request` step type initiates an HTTP request. `step` is at the moment just an object `{name}` and `request` is the [options object passed to request-promise](https://www.npmjs.com/package/request-promise#cheat-sheet).
+* `requestOptions`: Object of default request options used with the `request` module. The options passed directly to a `Request` step have priority, the `headers` property is merged. 
 
 Additionally, you can add arbitrary fields into the options object, which will become properties of the created tomato.
 

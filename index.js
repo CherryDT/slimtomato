@@ -38,7 +38,8 @@ class Request extends Step {
     return rp(Object.assign({
       jar: tomato.jar,
       followAllRedirects: true
-    }, this.options, {
+    }, tomato.requestOptions, this.options, {
+      headers: Object.assign({}, tomato.requestOptions.headers || {}, this.options.headers || {}),
       resolveWithFullResponse: true
     })).then(result => {
       if (!this.options.raw) result.$ = cheerio.load(result.body)
@@ -143,6 +144,7 @@ class Tomato {
   constructor (options) {
     Object.assign(this, options)
     if (!this.jar) this.jar = rp.jar()
+    if (!this.requestOptions) this.requestOptions = {}
   }
 
   runSteps (steps) {
