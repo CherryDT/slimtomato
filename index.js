@@ -159,7 +159,10 @@ class Tomato {
       return Promise.resolve().then(() => step.prepareAndRun(this, prevStep)).then(result => {
         this.lastStep.result = result
         if (this.afterStep) this.afterStep(this.lastStep)
-        if (result instanceof Step) return runSingleStep(result)
+        if (result instanceof Step) {
+          this.lastStep.result = prevStep.result // Restore old result, otherwise new step sees itself there
+          return runSingleStep(result)
+        }
       }, error => {
         error.stepName = step.name
         const oldErrorToString = error.toString
