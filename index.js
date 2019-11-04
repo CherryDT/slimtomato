@@ -17,7 +17,7 @@ class Step {
 
   prepare (tomato, prev) {
     if (this.evaluator) {
-      return Promise.resolve().then(() => this.evaluator(prev.result)).then(options => {
+      return Promise.resolve().then(() => this.evaluator((prev || {}).result)).then(options => {
         this.options = options
       })
     }
