@@ -41,7 +41,15 @@ class Request extends Step {
     }, tomato.requestOptions, this.options, {
       headers: Object.assign({}, tomato.requestOptions.headers || {}, this.options.headers || {}),
       resolveWithFullResponse: true
-    })).then(result => {
+    })).on('redirect', function () {
+      // Ensure cookies are set even during redirect
+      const cookieHeader = this.response.headers['set-cookie']
+      for (const cookie of Array.isArray(cookieHeader) ? cookieHeader : [cookieHeader]) {
+        try {
+          tomato.jar.setCookie(cookie, this.href, {ignoreError: true})
+        } catch (e) {}
+      }
+    }).then(result => {
       if (!this.options.raw) result.$ = cheerio.load(result.body)
       return result
     })
